@@ -15,25 +15,15 @@ function Main ({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
         setCards(data);
       })
       .catch(err => console.log(err));
-  }, []);
 
-  useEffect(() => {
     request.getUserInfo()
-      .then(data => {
-        setUserName(data.name);
-        setUserDescription(data.about);
-        setUserAvatar(data.avatar)
-      })
-      .catch(err => console.log(err));
+    .then(data => {
+      setUserName(data.name);
+      setUserDescription(data.about);
+      setUserAvatar(data.avatar)
+    })
+    .catch(err => console.log(err));
   }, []);
-
-  function renderCards(arr) {
-    return arr.map((item) => {
-      return <Card card={item} key={item._id} onCardClick={onCardClick}/>
-    });
-  }
-
-  const items = renderCards(cards);
 
   return (
     <main className="main">
@@ -68,7 +58,11 @@ function Main ({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
       </section>
       <section className="cards">
         <ul className="cards__items">
-          {items}
+          {cards.map((item) => {
+              return (
+                <Card card={item} key={item._id} onCardClick={onCardClick} />
+              );
+          })}
         </ul>
       </section>
     </main>
