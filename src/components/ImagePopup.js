@@ -1,7 +1,28 @@
+import { useEffect } from "react";
 
 function ImagePopup ({card, onClose}) {
+
+  useEffect(() => {
+    function handleEscClose(evt) {
+      console.log('down');
+      if (evt.key === 'Escape') {
+        onClose();
+      }
+    }
+
+    if (card._id) {
+      document.addEventListener('keydown', handleEscClose);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscClose);
+    }
+  });
+
   return (
-    <section className={`popup popup_img ${card._id ? 'popup_opened' : ''}`}>
+    <section
+      className={`popup popup_img ${card._id ? 'popup_opened' : ''}`}
+      onClick={(e) => e.target.classList.contains('popup_img') ? onClose() : null}>
       <div className="popup__wrapper">
         <button
           onClick={onClose}

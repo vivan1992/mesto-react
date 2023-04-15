@@ -41,16 +41,12 @@ class Api {
     return this._request(`/cards/${cardId}`, 'DELETE');
   }
 
-  likeCard(cardId) {
-    return this._request(`/cards/${cardId}/likes`, 'PUT');
-  }
-
-  dislikeCard(cardId) {
-    return this._request(`/cards/${cardId}/likes`, 'DELETE');
-  }
-
   updateUserAvatar(body) {
     return this._request('/users/me/avatar', 'PATCH', JSON.stringify(body));
+  }
+
+  changeLikeCardStatus(cardId, isLiked) {
+    return this._request(`/cards/${cardId}/likes`, isLiked ? 'PUT' : 'DELETE');
   }
 }
 
