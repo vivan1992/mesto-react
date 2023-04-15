@@ -9,7 +9,15 @@ function DeletePlacePopup ({isOpen, onClose, isLoaded, onDeletePlace}) {
   }
 
   return (
-    <PopupWithForm name='delete' title='Вы уверены?' buttonText={isLoaded ? 'Удаление...' : 'Да'} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}/>
+    <PopupWithForm
+      name='delete'
+      title='Вы уверены?'
+      buttonText={isLoaded ? 'Удаление...' : 'Да'}
+      isOpen={isOpen}
+      onClose={onClose}
+      onSubmit={handleSubmit}
+      buttonDisabled={true}
+      />
   )
 }
 

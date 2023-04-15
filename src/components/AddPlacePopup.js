@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PopupWithForm from './PopupWithForm';
 
 import { useValidator } from '../hooks/useValidator';
@@ -14,6 +14,11 @@ function AddPlacePopup({isOpen, onClose, isLoaded, onAddPlace}) {
 
   const isDisabled = validPlace.validity && validLink.validity;
 
+  useEffect(() => {
+    setPlace('');
+    setLink('');
+  }, [isOpen]);
+
   function handleChangePlace(e) {
     setPlace(e.target.value);
     validPlace.setValidator(e);
@@ -28,8 +33,6 @@ function AddPlacePopup({isOpen, onClose, isLoaded, onAddPlace}) {
     onClose();
     validPlace.resetValidate();
     validLink.resetValidate();
-    setPlace('');
-    setLink('');
   }
 
   function handleSubmit(e) {

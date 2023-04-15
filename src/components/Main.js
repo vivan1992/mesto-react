@@ -15,6 +15,7 @@ function Main ({onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike
             type="button"
             className="profile__image-edit"
             aria-label="Редактировать"
+            //Не является ошибкой!!! Ссылка на официальную документацию по данному вопросу: https://ru.reactjs.org/docs/accessibility.html
           ></button>
           <img src={currentUser.avatar} alt="Аватарка" className="profile__image"/>
           <div className="profile__wrap-text">

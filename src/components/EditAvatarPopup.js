@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import PopupWithForm from './PopupWithForm';
 
 import { useValidator } from '../hooks/useValidator';
@@ -9,6 +9,10 @@ function EditAvatarPopup({isOpen, onClose, isLoaded, onUpdateAvatar}) {
 
   const validAvatar = useValidator();
 
+  useEffect(() => {
+    avatarRef.current.value = '';
+  }, [isOpen]);
+
   function handleChange(e) {
     validAvatar.setValidator(e);
   }
@@ -16,7 +20,6 @@ function EditAvatarPopup({isOpen, onClose, isLoaded, onUpdateAvatar}) {
   function handleClose() {
     onClose();
     validAvatar.resetValidate();
-    avatarRef.current.value = '';
   }
 
   function handleSubmit(e) {
