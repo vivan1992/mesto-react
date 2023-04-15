@@ -4,7 +4,6 @@ function ImagePopup ({card, onClose}) {
 
   useEffect(() => {
     function handleEscClose(evt) {
-      console.log('down');
       if (evt.key === 'Escape') {
         onClose();
       }

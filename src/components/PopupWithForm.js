@@ -4,7 +4,6 @@ function PopupWithForm (props) {
 
   useEffect(() => {
     function handleEscClose(evt) {
-      console.log('down');
       if (evt.key === 'Escape') {
         props.onClose();
       }
