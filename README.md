@@ -14,3 +14,5 @@
 8. REST API
 9. React
 10. Hooks
+
+Ознакомиться с проеком можно по ссылке [https://vivan1992.github.io/mesto-react/](https://vivan1992.github.io/mesto-react/)
