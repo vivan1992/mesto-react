@@ -10,7 +10,7 @@ export function useValidator(initial = false) {
   }
 
   const resetValidate = () => {
-    setValidity(false);
+    setValidity(initial);
     setTextError('');
   }
 
