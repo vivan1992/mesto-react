@@ -33,5 +33,23 @@
 10. Hooks
 
 ### Работа с проектом:
+
 #### Требования к установке
+
 * Node.js v18.14.0+
+
+#### Рабочая копия
+  git clone https://github.com/vivan1992/mesto-react.git
+  cd mesto-react
+  
+#### Установка зависимостей
+
+  npm install
+  
+#### Запуск окружения разработки
+
+  npm run dev
+  
+#### Сборка
+
+  npm run buld
