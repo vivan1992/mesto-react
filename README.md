@@ -40,16 +40,20 @@
 
 #### Рабочая копия
   >```git clone https://github.com/vivan1992/mesto-react.git
-  >cd mesto-react```
+  >cd mesto-react
+  >```
   
 #### Установка зависимостей
 
-  >```npm install```
+  >```npm install
+  >```
   
 #### Запуск окружения разработки
 
-  >```npm run dev```
+  >```npm run dev
+  >```
   
 #### Сборка
 
-  >```npm run buld```
+  >```npm run buld
+  >```
